@@ -1,4 +1,4 @@
-Django report app 
+**Django report app**
 
 Tutorial by PyPlane on freecodecamp: https://www.youtube.com/watch?v=04L0BbAcCpQ
 
@@ -6,8 +6,7 @@ Tutorial by PyPlane on freecodecamp: https://www.youtube.com/watch?v=04L0BbAcCpQ
 
 
 
-
-bash```
+```
 pip install django
 
 django-admin startproject reports_project .
