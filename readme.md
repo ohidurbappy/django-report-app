@@ -3,8 +3,7 @@
 Tutorial by PyPlane on freecodecamp: https://www.youtube.com/watch?v=04L0BbAcCpQ
 
 
-
-
+<img src="report-app.jpg"/>
 
 ```
 pip install django
