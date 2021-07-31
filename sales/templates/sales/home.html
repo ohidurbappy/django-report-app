@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block scripts %}
+
+<script src="{% static 'sales/home.js' %}" defer></script>
+ {% endblock scripts %}  
+
+
+
+
+{% block title %}
+
+Home 
+
+{% endblock title %}
+
+
+{% block content %}
+Sales
+
+<hr>
+
+<form action="" method="POST">
+{% csrf_token %}
+
+{{search_form|crispy}}
+<button type="submit" class="btn btn-primary mt-3">Submit</button>
+
+</form>
+
+<br>
+
+
+
+{% if no_data %}
+<div class="alert alert-danger" role="alert">
+  No data available for the selected date range.
+</div>
+{% endif %}
+
+
+{% if sales_df %}
+
+<h3>Sales Data</h3>
+{{sales_df|safe}}
+
+
+<h3>Positions Data</h3>
+{{positions_df|safe}}
+
+<h3>Merged Data</h3>
+{{merged_df|safe}}
+
+<h3>Grouped Data</h3>
+{{df|safe}}
+
+<h3>Chart</h3>
+<img src="data:image/png;base64, {{chart|safe}}" id="img"/>
+
+
+{% endif %}
+
+
+<!-- Modal -->
+<div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reportModalLabel">Report</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal-body">
+      <div id="alert-box"></div>
+        <form id="report-form" autocomplete="off">
+            {% csrf_token %}
+            {{report_form|crispy}}
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<button type="button" id='report-btn' class="btn btn-primary invisible" data-bs-toggle="modal" data-bs-target="#reportModal">Add report</button>
+
+
+{% endblock content %}

@@ -1,0 +1,8 @@
+pos,transaction_id,product,quantity,customer,date
+1,e100,Smartphone,1,test customer1,2021-03-12
+2,e120,Tv,2,test customer1,2021-03-12
+3,e110,Laptop,1,customer1,2021-03-13
+4,e170,Laptop,4,test customer3,2021-03-14
+5,e900,Smartphone,1,test4,2021-03-13
+6,e110,Smartphone,2,test,2021-03-14
+7,e130,Tv,2,customer1,2021-03-12

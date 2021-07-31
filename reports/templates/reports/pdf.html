@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF - {{report.name}} </title>
+
+
+    <style>
+        .report-image {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{report.name}}</h1>
+    <hr>
+    <p>{{report.remarks}}</p>
+    <br>
+    <img class="report-image" src="{{report.image.path}}" />
+    <br>
+    <hr>
+    <p>Created by : <b>{{report.author.user.username}}</b></p>
+    <p>Date Created : <b>{{report.created}}</b></p>
+
+</body>
+
+</html>
